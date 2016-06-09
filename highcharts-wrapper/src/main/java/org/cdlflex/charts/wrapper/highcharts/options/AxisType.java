@@ -30,5 +30,7 @@ public enum AxisType implements LowercaseEnum {
 
 	DATETIME,
 
-	LOGARITHMIC;
+	LOGARITHMIC,
+
+    CATEGORY;
 }

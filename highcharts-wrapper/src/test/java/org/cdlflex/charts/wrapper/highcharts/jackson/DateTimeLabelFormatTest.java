@@ -1,16 +1,15 @@
 /**
- * Copyright 2012-2013 Wicked Charts (tom.hombergs@gmail.com)
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
  *        http://www.apache.org/licenses/LICENSE-2.0
  *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
  */
 package org.cdlflex.charts.wrapper.highcharts.jackson;
 
@@ -25,42 +24,42 @@ import org.junit.Test;
  */
 public class DateTimeLabelFormatTest {
 
-	@Test
-	public void testOneProperty() {
-		// given
-		DateTimeLabelFormat dateTimeLabelFormat = new DateTimeLabelFormat();
-		dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.SECOND, "%e. %b");
-		JsonRenderer renderer = new JsonRenderer();
+    @Test
+    public void testOneProperty() {
+        // given
+        DateTimeLabelFormat dateTimeLabelFormat = new DateTimeLabelFormat();
+        dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.SECOND, "%e. %b");
+        JsonRenderer renderer = new JsonRenderer();
 
-		// when
-		String json = renderer.toJson(dateTimeLabelFormat);
+        // when
+        String json = renderer.toJson(dateTimeLabelFormat);
 
-		// then
-		Assert.assertEquals("{ second: '%e. %b' }", json);
-	}
+        // then
+        Assert.assertEquals("{ second: '%e. %b' }", json);
+    }
 
-//	@Test
-	public void testMoreProperties() {
-		// given
-		DateTimeLabelFormat dateTimeLabelFormat = new DateTimeLabelFormat();
-		dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.SECOND, "%H:%M:%S");
-		dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.MINUTE, "%H:%M");
-		dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.HOUR, "%H:%M");
-		dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.DAY, "%e. %b");
-		dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.WEEK, "%e. %b");
-		dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.MONTH, "%b \'%y");
-		dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.YEAR, "%Y");
+    // @Test
+    public void testMoreProperties() {
+        // given
+        DateTimeLabelFormat dateTimeLabelFormat = new DateTimeLabelFormat();
+        dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.SECOND, "%H:%M:%S");
+        dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.MINUTE, "%H:%M");
+        dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.HOUR, "%H:%M");
+        dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.DAY, "%e. %b");
+        dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.WEEK, "%e. %b");
+        dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.MONTH, "%b \'%y");
+        dateTimeLabelFormat.setProperty(DateTimeLabelFormat.DateTimeProperties.YEAR, "%Y");
 
-		JsonRenderer renderer = new JsonRenderer();
+        JsonRenderer renderer = new JsonRenderer();
 
-		// when
-		String json = renderer.toJson(dateTimeLabelFormat);
+        // when
+        String json = renderer.toJson(dateTimeLabelFormat);
 
-		// then
-		Assert.assertEquals(
-				"{ week: '%e. %b', hour: '%H:%M', minute: '%H:%M', year: '%Y', month: '%b \'%y', day: '%e. %b', second: '%H:%M:%S' }",
-				json);
+        // then
+        Assert.assertEquals(
+                            "{ week: '%e. %b', hour: '%H:%M', minute: '%H:%M', year: '%Y', month: '%b \'%y', day: '%e. %b', second: '%H:%M:%S' }",
+                            json);
 
-	}
+    }
 
 }

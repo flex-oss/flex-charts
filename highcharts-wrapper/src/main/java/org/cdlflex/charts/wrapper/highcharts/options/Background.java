@@ -1,16 +1,15 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
  *        http://www.apache.org/licenses/LICENSE-2.0
  *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
  */
 package org.cdlflex.charts.wrapper.highcharts.options;
 
@@ -21,92 +20,84 @@ import org.cdlflex.charts.wrapper.highcharts.options.color.ColorReference;
 /**
  * Defines the configuration of the background option.
  * 
- * @see <a
- *      href="http://api.highcharts.com/highcharts#pane.background">http://api.highcharts.com/highcharts#pane.background</a>
+ * @see <a href="http://api.highcharts.com/highcharts#pane.background">http://api.highcharts.com/highcharts#pane.
+ *      background</a>
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
 public class Background implements Serializable {
 
-  private static final long serialVersionUID = 1L;
+    public final static Background DEFAULT_BACKGROUND = new Background();
+    private static final long serialVersionUID = 1L;
+    private ColorReference backgroundColor;
+    private Integer innerWidth;
+    private Integer outerWidth;
+    private Integer borderWidth;
+    private ColorReference borderColor;
+    private PixelOrPercent outerRadius;
+    private PixelOrPercent innerRadius;
 
-  private ColorReference backgroundColor;
+    public ColorReference getBackgroundColor() {
+        return this.backgroundColor;
+    }
 
-  private Integer innerWidth;
+    public Background setBackgroundColor(final ColorReference backgroundColor) {
+        this.backgroundColor = backgroundColor;
+        return this;
+    }
 
-  private Integer outerWidth;
+    public ColorReference getBorderColor() {
+        return this.borderColor;
+    }
 
-  private Integer borderWidth;
+    public Background setBorderColor(final ColorReference borderColor) {
+        this.borderColor = borderColor;
+        return this;
+    }
 
-  private ColorReference borderColor;
+    public Integer getBorderWidth() {
+        return this.borderWidth;
+    }
 
-  private PixelOrPercent outerRadius;
+    public Background setBorderWidth(final Integer borderWidth) {
+        this.borderWidth = borderWidth;
+        return this;
+    }
 
-  private PixelOrPercent innerRadius;
+    public Integer getInnerWidth() {
+        return this.innerWidth;
+    }
 
-  public final static Background DEFAULT_BACKGROUND = new Background();
+    public Background setInnerWidth(final Integer innerWidth) {
+        this.innerWidth = innerWidth;
+        return this;
+    }
 
-  public ColorReference getBackgroundColor() {
-    return this.backgroundColor;
-  }
+    public Integer getOuterWidth() {
+        return this.outerWidth;
+    }
 
-  public ColorReference getBorderColor() {
-    return this.borderColor;
-  }
+    public Background setOuterWidth(final Integer outerWidth) {
+        this.outerWidth = outerWidth;
+        return this;
+    }
 
-  public Integer getBorderWidth() {
-    return this.borderWidth;
-  }
+    public PixelOrPercent getOuterRadius() {
+        return outerRadius;
+    }
 
-  public Integer getInnerWidth() {
-    return this.innerWidth;
-  }
+    public Background setOuterRadius(PixelOrPercent outerRadius) {
+        this.outerRadius = outerRadius;
+        return this;
+    }
 
-  public Integer getOuterWidth() {
-    return this.outerWidth;
-  }
+    public PixelOrPercent getInnerRadius() {
+        return innerRadius;
+    }
 
-  public Background setBackgroundColor(final ColorReference backgroundColor) {
-    this.backgroundColor = backgroundColor;
-    return this;
-  }
-
-  public Background setBorderColor(final ColorReference borderColor) {
-    this.borderColor = borderColor;
-    return this;
-  }
-
-  public Background setBorderWidth(final Integer borderWidth) {
-    this.borderWidth = borderWidth;
-    return this;
-  }
-
-  public Background setInnerWidth(final Integer innerWidth) {
-    this.innerWidth = innerWidth;
-    return this;
-  }
-
-  public Background setOuterWidth(final Integer outerWidth) {
-    this.outerWidth = outerWidth;
-    return this;
-  }
-
-  public Background setOuterRadius(PixelOrPercent outerRadius) {
-    this.outerRadius = outerRadius;
-    return this;
-  }
-
-  public PixelOrPercent getOuterRadius() {
-    return outerRadius;
-  }
-
-  public Background setInnerRadius(PixelOrPercent innerRadius) {
-    this.innerRadius = innerRadius;
-    return this;
-  }
-
-  public PixelOrPercent getInnerRadius() {
-    return innerRadius;
-  }
+    public Background setInnerRadius(PixelOrPercent innerRadius) {
+        this.innerRadius = innerRadius;
+        return this;
+    }
 
 }

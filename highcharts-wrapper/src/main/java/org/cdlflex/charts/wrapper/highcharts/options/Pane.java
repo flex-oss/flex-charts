@@ -1,16 +1,15 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
  *        http://www.apache.org/licenses/LICENSE-2.0
  *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
  */
 package org.cdlflex.charts.wrapper.highcharts.options;
 
@@ -21,79 +20,78 @@ import java.util.List;
 /**
  * Defines the configuration of the "pane" option.
  * 
- * @see <a
- *      href="http://api.highcharts.com/highcharts#pane">http://api.highcharts.com/highcharts#pane</a>
+ * @see <a href="http://api.highcharts.com/highcharts#pane">http://api.highcharts.com/highcharts#pane</a>
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  */
 public class Pane implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private Integer startAngle;
+    private Integer startAngle;
 
-	private Integer endAngle;
+    private Integer endAngle;
 
-	private Center center;
+    private Center center;
 
-	private List<Background> background;
+    private List<Background> background;
 
-	private PixelOrPercent size;
+    private PixelOrPercent size;
 
-	public Pane() {
+    public Pane() {
 
-	}
+    }
 
-	public Pane addBackground(final Background background) {
-		if (this.background == null) {
-			this.background = new ArrayList<Background>();
-		}
-		this.background.add(background);
-		return this;
-	}
+    public Pane addBackground(final Background background) {
+        if (this.background == null) {
+            this.background = new ArrayList<Background>();
+        }
+        this.background.add(background);
+        return this;
+    }
 
-	public List<Background> getBackground() {
-		return this.background;
-	}
+    public List<Background> getBackground() {
+        return this.background;
+    }
 
-	public Center getCenter() {
-		return this.center;
-	}
+    public Pane setBackground(final List<Background> background) {
+        this.background = background;
+        return this;
+    }
 
-	public Integer getEndAngle() {
-		return this.endAngle;
-	}
+    public Center getCenter() {
+        return this.center;
+    }
 
-	public Integer getStartAngle() {
-		return this.startAngle;
-	}
+    public Pane setCenter(final Center center) {
+        this.center = center;
+        return this;
+    }
 
-	public Pane setBackground(final List<Background> background) {
-		this.background = background;
-		return this;
-	}
+    public Integer getEndAngle() {
+        return this.endAngle;
+    }
 
-	public Pane setCenter(final Center center) {
-		this.center = center;
-		return this;
-	}
+    public Pane setEndAngle(final Integer endAngle) {
+        this.endAngle = endAngle;
+        return this;
+    }
 
-	public Pane setEndAngle(final Integer endAngle) {
-		this.endAngle = endAngle;
-		return this;
-	}
+    public Integer getStartAngle() {
+        return this.startAngle;
+    }
 
-	public Pane setStartAngle(final Integer startAngle) {
-		this.startAngle = startAngle;
-		return this;
-	}
+    public Pane setStartAngle(final Integer startAngle) {
+        this.startAngle = startAngle;
+        return this;
+    }
 
-	public Pane setSize(PixelOrPercent size) {
-		this.size = size;
-		return this;
-	}
+    public PixelOrPercent getSize() {
+        return size;
+    }
 
-	public PixelOrPercent getSize() {
-		return size;
-	}
+    public Pane setSize(PixelOrPercent size) {
+        this.size = size;
+        return this;
+    }
 
 }

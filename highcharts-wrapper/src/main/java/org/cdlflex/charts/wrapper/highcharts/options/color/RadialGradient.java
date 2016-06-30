@@ -1,16 +1,15 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
  *        http://www.apache.org/licenses/LICENSE-2.0
  *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
  */
 package org.cdlflex.charts.wrapper.highcharts.options.color;
 
@@ -26,102 +25,98 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  */
 public class RadialGradient extends Gradient {
 
-	private class RadialGradientCoordinates implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private RadialGradientCoordinates radialGradient = new RadialGradientCoordinates();
 
-		private static final long serialVersionUID = 1L;
+    @Override
+    protected ColorReference copy() {
+        RadialGradient copy = new RadialGradient();
+        copy.radialGradient = this.radialGradient;
+        copy.setBrightness(getBrightness());
+        copy.addStopsInternal(this.getStops());
+        return copy;
+    }
 
-		private Number cx;
+    @JsonIgnore
+    public Number getCx() {
+        return this.radialGradient.cx;
+    }
 
-		private Number cy;
+    /**
+     * Sets the horizontal coordinate of the center of the gradient.
+     *
+     * @param cx percentage of the width where to display the center of the gradient. Must be a value between 0 and 1. 0
+     *        = left. 1 = right.
+     * @return this {@link RadialGradient} object for chaining.
+     */
+    public RadialGradient setCx(final Number cx) {
+        this.radialGradient.cx = cx;
+        return this;
+    }
 
-		private Number r;
+    @JsonIgnore
+    public Number getCy() {
+        return this.radialGradient.cy;
+    }
 
-		@SuppressWarnings("unused")
-		public Number getCx() {
-			return this.cx;
-		}
+    /**
+     * Sets the vertical coordinate of the center of the gradient.
+     *
+     * @param cy percentage of the heigth where to display the center of the gradient. Must be a value between 0 and 1.
+     *        0 = top. 1 = bottom.
+     * @return this {@link RadialGradient} object for chaining.
+     */
+    public RadialGradient setCy(final Number cy) {
+        this.radialGradient.cy = cy;
+        return this;
+    }
 
-		@SuppressWarnings("unused")
-		public Number getCy() {
-			return this.cy;
-		}
+    @JsonIgnore
+    public Number getR() {
+        return this.radialGradient.r;
+    }
 
-		@SuppressWarnings("unused")
-		public Number getR() {
-			return this.r;
-		}
+    /**
+     * Sets the radius (= size) of the gradient.
+     *
+     * @param r percentage of the size of the object containing the gradient. Must be a value between 0 and 1. 0 =
+     *        small. 1 = spans the whole object.
+     * @return this {@link RadialGradient} object for chaining.
+     */
+    public RadialGradient setR(final Number r) {
+        this.radialGradient.r = r;
+        return this;
+    }
 
-	}
+    public RadialGradientCoordinates getRadialGradient() {
+        return this.radialGradient;
+    }
 
-	private static final long serialVersionUID = 1L;
+    private class RadialGradientCoordinates implements Serializable {
 
-	private RadialGradientCoordinates radialGradient = new RadialGradientCoordinates();
+        private static final long serialVersionUID = 1L;
 
-	@Override
-	protected ColorReference copy() {
-		RadialGradient copy = new RadialGradient();
-		copy.radialGradient = this.radialGradient;
-		copy.setBrightness(getBrightness());
-		copy.addStopsInternal(this.getStops());
-		return copy;
-	}
+        private Number cx;
 
-	@JsonIgnore
-	public Number getCx() {
-		return this.radialGradient.cx;
-	}
+        private Number cy;
 
-	@JsonIgnore
-	public Number getCy() {
-		return this.radialGradient.cy;
-	}
+        private Number r;
 
-	@JsonIgnore
-	public Number getR() {
-		return this.radialGradient.r;
-	}
+        @SuppressWarnings("unused")
+        public Number getCx() {
+            return this.cx;
+        }
 
-	public RadialGradientCoordinates getRadialGradient() {
-		return this.radialGradient;
-	}
+        @SuppressWarnings("unused")
+        public Number getCy() {
+            return this.cy;
+        }
 
-	/**
-	 * Sets the horizontal coordinate of the center of the gradient.
-	 * 
-	 * @param cx
-	 *          percentage of the width where to display the center of the
-	 *          gradient. Must be a value between 0 and 1. 0 = left. 1 = right.
-	 * @return this {@link RadialGradient} object for chaining.
-	 */
-	public RadialGradient setCx(final Number cx) {
-		this.radialGradient.cx = cx;
-		return this;
-	}
+        @SuppressWarnings("unused")
+        public Number getR() {
+            return this.r;
+        }
 
-	/**
-	 * Sets the vertical coordinate of the center of the gradient.
-	 * 
-	 * @param cx
-	 *          percentage of the heigth where to display the center of the
-	 *          gradient. Must be a value between 0 and 1. 0 = top. 1 = bottom.
-	 * @return this {@link RadialGradient} object for chaining.
-	 */
-	public RadialGradient setCy(final Number cy) {
-		this.radialGradient.cy = cy;
-		return this;
-	}
-
-	/**
-	 * Sets the radius (= size) of the gradient.
-	 * 
-	 * @param r
-	 *          percentage of the size of the object containing the gradient. Must
-	 *          be a value between 0 and 1. 0 = small. 1 = spans the whole object.
-	 * @return this {@link RadialGradient} object for chaining.
-	 */
-	public RadialGradient setR(final Number r) {
-		this.radialGradient.r = r;
-		return this;
-	}
+    }
 
 }

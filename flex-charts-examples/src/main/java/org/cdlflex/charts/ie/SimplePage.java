@@ -1,3 +1,16 @@
+/**
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
 package org.cdlflex.charts.ie;
 
 import java.util.Arrays;
@@ -11,9 +24,9 @@ import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.IChoiceRenderer;
 import org.apache.wicket.model.PropertyModel;
 import org.cdlflex.charts.highcharts.Chart;
+import org.cdlflex.charts.options.*;
 import org.cdlflex.charts.options.base.ShowcaseOptions;
 import org.cdlflex.charts.wrapper.highcharts.options.Options;
-import org.cdlflex.charts.options.*;
 
 /**
  * This page has been build to show all Options in a basic design without jquery UI and such, so that it can be viewed
@@ -104,7 +117,8 @@ public class SimplePage extends WebPage {
 
         final DropDownChoice<ShowcaseOptions> dropdown = new DropDownChoice<ShowcaseOptions>(
                 "chartSelect", new PropertyModel<ShowcaseOptions>(this,
-                        "selectedOptions"), SimplePage.choices);
+                        "selectedOptions"),
+                SimplePage.choices);
         form.add(dropdown);
 
         dropdown.setChoiceRenderer(new IChoiceRenderer<ShowcaseOptions>() {

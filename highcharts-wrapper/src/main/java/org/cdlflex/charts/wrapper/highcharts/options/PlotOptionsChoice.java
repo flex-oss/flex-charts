@@ -1,16 +1,15 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
  *        http://www.apache.org/licenses/LICENSE-2.0
  *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
  */
 package org.cdlflex.charts.wrapper.highcharts.options;
 
@@ -20,8 +19,7 @@ import java.io.Serializable;
  * Defines a choice between on or more {@link PlotOptions}
  *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
- * @see <a
- * href="http://api.highcharts.com/highcharts#plotOptions">http://api.highcharts.com/highcharts#plotOptions</a>
+ * @see <a href="http://api.highcharts.com/highcharts#plotOptions">http://api.highcharts.com/highcharts#plotOptions</a>
  */
 public class PlotOptionsChoice implements Serializable {
 
@@ -65,8 +63,18 @@ public class PlotOptionsChoice implements Serializable {
         return this.area;
     }
 
+    public PlotOptionsChoice setArea(final PlotOptions area) {
+        this.area = area;
+        return this;
+    }
+
     public PlotOptions getAreaspline() {
         return this.areaspline;
+    }
+
+    public PlotOptionsChoice setAreaspline(final PlotOptions areaspline) {
+        this.areaspline = areaspline;
+        return this;
     }
 
     public PlotOptions getAreasplinerange() {
@@ -77,41 +85,71 @@ public class PlotOptionsChoice implements Serializable {
         return this.bar;
     }
 
+    public PlotOptionsChoice setBar(final PlotOptions bar) {
+        this.bar = bar;
+        return this;
+    }
+
     public PlotOptions getCandleStick() {
         return this.candleStick;
+    }
+
+    public PlotOptionsChoice setCandleStick(final PlotOptions candleStick) {
+        this.candleStick = candleStick;
+        return this;
     }
 
     public PlotOptions getColumn() {
         return this.column;
     }
 
+    public PlotOptionsChoice setColumn(final PlotOptions column) {
+        this.column = column;
+        return this;
+    }
+
     public PlotOptions getLine() {
         return this.line;
+    }
+
+    public PlotOptionsChoice setLine(final PlotOptions line) {
+        this.line = line;
+        return this;
     }
 
     public PlotOptions getPie() {
         return this.pie;
     }
 
+    public PlotOptionsChoice setPie(final PlotOptions pie) {
+        this.pie = pie;
+        return this;
+    }
+
     public PlotOptions getScatter() {
         return this.scatter;
+    }
+
+    public PlotOptionsChoice setScatter(final PlotOptions scatter) {
+        this.scatter = scatter;
+        return this;
     }
 
     public PlotOptions getSeries() {
         return this.series;
     }
 
+    public PlotOptionsChoice setSeries(final PlotOptions series) {
+        this.series = series;
+        return this;
+    }
+
     public PlotOptions getSpline() {
         return this.spline;
     }
 
-    public PlotOptionsChoice setArea(final PlotOptions area) {
-        this.area = area;
-        return this;
-    }
-
-    public PlotOptionsChoice setAreaspline(final PlotOptions areaspline) {
-        this.areaspline = areaspline;
+    public PlotOptionsChoice setSpline(final PlotOptions spline) {
+        this.spline = spline;
         return this;
     }
 
@@ -120,44 +158,8 @@ public class PlotOptionsChoice implements Serializable {
         return this;
     }
 
-    public PlotOptionsChoice setBar(final PlotOptions bar) {
-        this.bar = bar;
-        return this;
-    }
-
-    public PlotOptionsChoice setCandleStick(final PlotOptions candleStick) {
-        this.candleStick = candleStick;
-        return this;
-    }
-
-    public PlotOptionsChoice setColumn(final PlotOptions column) {
-        this.column = column;
-        return this;
-    }
-
-    public PlotOptionsChoice setLine(final PlotOptions line) {
-        this.line = line;
-        return this;
-    }
-
-    public PlotOptionsChoice setPie(final PlotOptions pie) {
-        this.pie = pie;
-        return this;
-    }
-
-    public PlotOptionsChoice setScatter(final PlotOptions scatter) {
-        this.scatter = scatter;
-        return this;
-    }
-
-    public PlotOptionsChoice setSeries(final PlotOptions series) {
-        this.series = series;
-        return this;
-    }
-
-    public PlotOptionsChoice setSpline(final PlotOptions spline) {
-        this.spline = spline;
-        return this;
+    public PlotOptions getColumnrange() {
+        return columnrange;
     }
 
     public PlotOptionsChoice setColumnrange(PlotOptions columnrange) {
@@ -165,17 +167,13 @@ public class PlotOptionsChoice implements Serializable {
         return this;
     }
 
-    public PlotOptions getColumnrange() {
-        return columnrange;
+    public PlotOptions getGauge() {
+        return gauge;
     }
 
     public PlotOptionsChoice setGauge(PlotOptions gauge) {
         this.gauge = gauge;
         return this;
-    }
-
-    public PlotOptions getGauge() {
-        return gauge;
     }
 
     public PlotOptions getPlotOptions(SeriesType type) {

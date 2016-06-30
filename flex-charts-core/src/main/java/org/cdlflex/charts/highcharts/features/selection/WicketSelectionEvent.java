@@ -1,21 +1,20 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
  *        http://www.apache.org/licenses/LICENSE-2.0
  *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
  */
 package org.cdlflex.charts.highcharts.features.selection;
 
-import org.cdlflex.charts.wrapper.highcharts.options.interaction.SelectionEvent;
 import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.cdlflex.charts.wrapper.highcharts.options.interaction.SelectionEvent;
 
 /**
  * Wicket-specific extension of {@link SelectionEvent}.
@@ -32,18 +31,18 @@ public class WicketSelectionEvent extends SelectionEvent {
         this.yAxes = sourceEvent.getyAxes();
     }
 
-    public void setAjaxRequestTarget(final AjaxRequestTarget ajaxRequestTarget) {
-        this.ajaxRequestTarget = ajaxRequestTarget;
-    }
-
     /**
-     * Returns the {@link AjaxRequestTarget} that is connected to the AJAX request
-     * that was triggered by interacting with a chart.
+     * Returns the {@link AjaxRequestTarget} that is connected to the AJAX request that was triggered by interacting
+     * with a chart.
      *
      * @return the Wicket {@link AjaxRequestTarget}.
      */
     public AjaxRequestTarget getAjaxRequestTarget() {
         return this.ajaxRequestTarget;
+    }
+
+    public void setAjaxRequestTarget(final AjaxRequestTarget ajaxRequestTarget) {
+        this.ajaxRequestTarget = ajaxRequestTarget;
     }
 
 }

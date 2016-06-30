@@ -1,16 +1,15 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
  *        http://www.apache.org/licenses/LICENSE-2.0
  *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
  */
 package org.cdlflex.charts.wrapper.highcharts.options;
 
@@ -20,9 +19,8 @@ import java.io.Serializable;
  * Defines some label in a chart.
  *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
- * @see <a
- * href="http://api.highcharts.com/highcharts#Axis.plotLines.label">http://api.highcharts.com/highcharts#Axis.plotLines.label</a>
- * and others
+ * @see <a href="http://api.highcharts.com/highcharts#Axis.plotLines.label">Axis.plotLines.label</a>
+ *
  */
 public class Labels implements Serializable {
 
@@ -70,45 +68,13 @@ public class Labels implements Serializable {
         return this.align;
     }
 
-    public Function getFormatter() {
-        return this.formatter;
-    }
-
-    public Overflow getOverflow() {
-        return this.overflow;
-    }
-
-    public Integer getRotation() {
-        return this.rotation;
-    }
-
-    public CssStyle getStyle() {
-        return this.style;
-    }
-
-    public String getText() {
-        return this.text;
-    }
-
-    public HorizontalAlignment getTextAlign() {
-        return this.textAlign;
-    }
-
-    public VerticalAlignment getVerticalAlign() {
-        return this.verticalAlign;
-    }
-
-    public Integer getX() {
-        return this.x;
-    }
-
-    public Integer getY() {
-        return this.y;
-    }
-
     public Labels setAlign(final HorizontalAlignment align) {
         this.align = align;
         return this;
+    }
+
+    public Function getFormatter() {
+        return this.formatter;
     }
 
     public Labels setFormatter(final Function formatter) {
@@ -116,9 +82,17 @@ public class Labels implements Serializable {
         return this;
     }
 
+    public Overflow getOverflow() {
+        return this.overflow;
+    }
+
     public Labels setOverflow(final Overflow overflow) {
         this.overflow = overflow;
         return this;
+    }
+
+    public Integer getRotation() {
+        return this.rotation;
     }
 
     public Labels setRotation(final Integer rotation) {
@@ -126,9 +100,17 @@ public class Labels implements Serializable {
         return this;
     }
 
+    public CssStyle getStyle() {
+        return this.style;
+    }
+
     public Labels setStyle(final CssStyle style) {
         this.style = style;
         return this;
+    }
+
+    public String getText() {
+        return this.text;
     }
 
     public Labels setText(final String text) {
@@ -136,9 +118,17 @@ public class Labels implements Serializable {
         return this;
     }
 
+    public HorizontalAlignment getTextAlign() {
+        return this.textAlign;
+    }
+
     public Labels setTextAlign(final HorizontalAlignment textAlign) {
         this.textAlign = textAlign;
         return this;
+    }
+
+    public VerticalAlignment getVerticalAlign() {
+        return this.verticalAlign;
     }
 
     public Labels setVerticalAlign(final VerticalAlignment verticalAlign) {
@@ -146,9 +136,17 @@ public class Labels implements Serializable {
         return this;
     }
 
+    public Integer getX() {
+        return this.x;
+    }
+
     public Labels setX(final Integer x) {
         this.x = x;
         return this;
+    }
+
+    public Integer getY() {
+        return this.y;
     }
 
     public Labels setY(final Integer y) {
@@ -156,13 +154,13 @@ public class Labels implements Serializable {
         return this;
     }
 
+    public Integer getStep() {
+        return step;
+    }
+
     public Labels setStep(Integer step) {
         this.step = step;
         return this;
-    }
-
-    public Integer getStep() {
-        return step;
     }
 
     public Boolean getEnabled() {
@@ -187,23 +185,25 @@ public class Labels implements Serializable {
         return format;
     }
 
+    /**
+     * Sets the format string for an axis label. Defaults to "{value}".
+     *
+     * @param format the new format string. Use "{value}" as a placeholder for the axis value.
+     * @see <a href="http://api.highcharts.com/highstock#xAxis.labels.format">http://api.highcharts.com/highstock#xAxis.
+     *      labels.format</a>
+     * @return returns the label for chaining
+     */
+    public Labels setFormat(String format) {
+        this.format = format;
+        return this;
+    }
+
     public Integer getMaxStaggerLines() {
         return maxStaggerLines;
     }
 
     public Labels setMaxStaggerLines(Integer maxStaggerLines) {
         this.maxStaggerLines = maxStaggerLines;
-        return this;
-    }
-
-    /**
-     * Sets the format string for an axis label. Defaults to "{value}".
-     *
-     * @param format the new format string. Use "{value}" as a placeholder for the axis value.
-     * @see <a href="http://api.highcharts.com/highstock#xAxis.labels.format">http://api.highcharts.com/highstock#xAxis.labels.format</a>
-     */
-    public Labels setFormat(String format) {
-        this.format = format;
         return this;
     }
 

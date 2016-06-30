@@ -1,32 +1,29 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
  *        http://www.apache.org/licenses/LICENSE-2.0
  *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
  */
 package org.cdlflex.charts.wrapper.highcharts.options;
 
-import org.cdlflex.charts.wrapper.highcharts.options.color.ColorReference;
-import org.cdlflex.charts.wrapper.highcharts.options.color.SimpleColor;
-
 import java.awt.*;
 import java.io.Serializable;
+
+import org.cdlflex.charts.wrapper.highcharts.options.color.ColorReference;
+import org.cdlflex.charts.wrapper.highcharts.options.color.SimpleColor;
 
 /**
  * Defines the configuration of the "dataLabels" option.
  *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
- * @see <a href=
- * "http://api.highcharts.com/highcharts#plotOptions.column.dataLabels</a>
- * and others
+ * @see <a href="http://api.highcharts.com/highcharts#plotOptions.column.dataLabels">plotOptions.column.dataLabels</a>
  */
 public class DataLabels implements Serializable {
 
@@ -79,6 +76,8 @@ public class DataLabels implements Serializable {
 
     /**
      * Convenience constructor.
+     * 
+     * @param enabled the parameter if enabled
      */
     public DataLabels(final Boolean enabled) {
         this.enabled = enabled;
@@ -88,81 +87,13 @@ public class DataLabels implements Serializable {
         return this.align;
     }
 
-    public ColorReference getBackgroundColor() {
-        return this.backgroundColor;
-    }
-
-    public ColorReference getBorderColor() {
-        return this.borderColor;
-    }
-
-    public Integer getBorderRadius() {
-        return this.borderRadius;
-    }
-
-    public ColorReference getColor() {
-        return this.color;
-    }
-
-    public ColorReference getConnectorColor() {
-        return this.connectorColor;
-    }
-
-    public Integer getDistance() {
-        return this.distance;
-    }
-
-    public Boolean getEnabled() {
-        return this.enabled;
-    }
-
-    public Function getFormatter() {
-        return this.formatter;
-    }
-
-    public String getFormat() {
-        return this.format;
-    }
-
-    public Overflow getOverflow() {
-        return this.overflow;
-    }
-
-    public Integer getPadding() {
-        return this.padding;
-    }
-
-    public Integer getRotation() {
-        return this.rotation;
-    }
-
-    public Boolean getShadow() {
-        return this.shadow;
-    }
-
-    public CssStyle getStyle() {
-        return this.style;
-    }
-
-    public Integer getBorderWidth() {
-        return this.borderWidth;
-    }
-
-    public Integer getX() {
-        return this.x;
-    }
-
-    public Integer getY() {
-        return this.y;
-    }
-
-    public Boolean getSoftConnector() {
-        return this.softConnector;
-    }
-
     public DataLabels setAlign(final HorizontalAlignment align) {
         this.align = align;
         return this;
+    }
+
+    public ColorReference getBackgroundColor() {
+        return this.backgroundColor;
     }
 
     public DataLabels setBackgroundColor(final Color color) {
@@ -175,6 +106,10 @@ public class DataLabels implements Serializable {
         return this;
     }
 
+    public ColorReference getBorderColor() {
+        return this.borderColor;
+    }
+
     public DataLabels setBorderColor(final Color color) {
         this.borderColor = new SimpleColor(color);
         return this;
@@ -185,9 +120,17 @@ public class DataLabels implements Serializable {
         return this;
     }
 
+    public Integer getBorderRadius() {
+        return this.borderRadius;
+    }
+
     public DataLabels setBorderRadius(final Integer borderRadius) {
         this.borderRadius = borderRadius;
         return this;
+    }
+
+    public ColorReference getColor() {
+        return this.color;
     }
 
     public DataLabels setColor(final Color color) {
@@ -200,9 +143,17 @@ public class DataLabels implements Serializable {
         return this;
     }
 
+    public ColorReference getConnectorColor() {
+        return this.connectorColor;
+    }
+
     public DataLabels setConnectorColor(final ColorReference connectorColor) {
         this.connectorColor = connectorColor;
         return this;
+    }
+
+    public Integer getDistance() {
+        return this.distance;
     }
 
     public DataLabels setDistance(final Integer distance) {
@@ -210,9 +161,17 @@ public class DataLabels implements Serializable {
         return this;
     }
 
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
     public DataLabels setEnabled(final Boolean enabled) {
         this.enabled = enabled;
         return this;
+    }
+
+    public Function getFormatter() {
+        return this.formatter;
     }
 
     public DataLabels setFormatter(final Function formatter) {
@@ -220,9 +179,17 @@ public class DataLabels implements Serializable {
         return this;
     }
 
+    public String getFormat() {
+        return this.format;
+    }
+
     public DataLabels setFormat(final String format) {
         this.format = format;
         return this;
+    }
+
+    public Overflow getOverflow() {
+        return this.overflow;
     }
 
     public DataLabels setOverflow(final Overflow overflow) {
@@ -230,9 +197,17 @@ public class DataLabels implements Serializable {
         return this;
     }
 
+    public Integer getPadding() {
+        return this.padding;
+    }
+
     public DataLabels setPadding(final Integer padding) {
         this.padding = padding;
         return this;
+    }
+
+    public Integer getRotation() {
+        return this.rotation;
     }
 
     public DataLabels setRotation(final Integer rotation) {
@@ -240,9 +215,17 @@ public class DataLabels implements Serializable {
         return this;
     }
 
+    public Boolean getShadow() {
+        return this.shadow;
+    }
+
     public DataLabels setShadow(final Boolean shadow) {
         this.shadow = shadow;
         return this;
+    }
+
+    public CssStyle getStyle() {
+        return this.style;
     }
 
     public DataLabels setStyle(final CssStyle style) {
@@ -250,9 +233,17 @@ public class DataLabels implements Serializable {
         return this;
     }
 
+    public Integer getBorderWidth() {
+        return this.borderWidth;
+    }
+
     public DataLabels setBorderWidth(final Integer vorderWidth) {
         this.borderWidth = vorderWidth;
         return this;
+    }
+
+    public Integer getX() {
+        return this.x;
     }
 
     public DataLabels setX(final Integer x) {
@@ -260,9 +251,17 @@ public class DataLabels implements Serializable {
         return this;
     }
 
+    public Integer getY() {
+        return this.y;
+    }
+
     public DataLabels setY(final Integer y) {
         this.y = y;
         return this;
+    }
+
+    public Boolean getSoftConnector() {
+        return this.softConnector;
     }
 
     public DataLabels setSoftConnector(final Boolean value) {

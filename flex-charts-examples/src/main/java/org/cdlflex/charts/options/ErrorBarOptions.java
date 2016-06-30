@@ -1,3 +1,16 @@
+/**
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
 package org.cdlflex.charts.options;
 
 import org.cdlflex.charts.options.base.ShowcaseOptions;
@@ -46,7 +59,7 @@ public class ErrorBarOptions extends ShowcaseOptions {
             .setyAxis(1)
             .setData(49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4)
             .setTooltip(new Tooltip()
-                            .setPointFormat("<span style=\"font-weight: bold; color: {series.color}\">{series.name}</span>: <b>{point.y:.1f} mm</b>")));
+                .setPointFormat("<span style=\"font-weight: bold; color: {series.color}\">{series.name}</span>: <b>{point.y:.1f} mm</b>")));
 
         addSeries(new CoordinatesSeries()
             .setName("Rainfall error")
@@ -64,8 +77,7 @@ public class ErrorBarOptions extends ShowcaseOptions {
                      new Coordinate<Number, Number>(204, 220),
                      new Coordinate<Number, Number>(189, 199),
                      new Coordinate<Number, Number>(95, 110),
-                     new Coordinate<Number, Number>(52, 56)
-            )
+                     new Coordinate<Number, Number>(52, 56))
             .setTooltip(new Tooltip()
                 .setPointFormat("(error range: {point.low}-{point.high} mm)<br/>")));
 
@@ -74,7 +86,7 @@ public class ErrorBarOptions extends ShowcaseOptions {
             .setType(SeriesType.SPLINE)
             .setData(7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6)
             .setTooltip(new Tooltip()
-                            .setPointFormat("<span style=\"font-weight: bold; color: {series.color}\">{series.name}</span>: <b>{point.y:.1f}°C</b>")));
+                .setPointFormat("<span style=\"font-weight: bold; color: {series.color}\">{series.name}</span>: <b>{point.y:.1f}°C</b>")));
 
         addSeries(new CoordinatesSeries()
             .setName("Temperature error")
@@ -91,8 +103,7 @@ public class ErrorBarOptions extends ShowcaseOptions {
                      new Coordinate<Number, Number>(23.2, 23.9),
                      new Coordinate<Number, Number>(18.0, 21.1),
                      new Coordinate<Number, Number>(12.9, 14.0),
-                     new Coordinate<Number, Number>(7.6, 10.0)
-            )
+                     new Coordinate<Number, Number>(7.6, 10.0))
             .setTooltip(new Tooltip()
                 .setPointFormat("(error range: {point.low}-{point.high}°C)<br/>")));
 

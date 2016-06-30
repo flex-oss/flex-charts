@@ -1,32 +1,30 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
  *        http://www.apache.org/licenses/LICENSE-2.0
  *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
  */
 package org.cdlflex.charts.wrapper.highcharts.options;
-
-import org.cdlflex.charts.wrapper.highcharts.options.color.ColorReference;
-import org.cdlflex.charts.wrapper.highcharts.options.color.SimpleColor;
 
 import java.awt.*;
 import java.io.Serializable;
 import java.util.List;
 
+import org.cdlflex.charts.wrapper.highcharts.options.color.ColorReference;
+import org.cdlflex.charts.wrapper.highcharts.options.color.SimpleColor;
+
 /**
  * Defines the configuration of the "plotOptions" option.
  *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
- * @see <a
- * href="http://api.highcharts.com/highcharts#plotOptions">http://api.highcharts.com/highcharts#plotOptions</a>
+ * @see <a href="http://api.highcharts.com/highcharts#plotOptions">http://api.highcharts.com/highcharts#plotOptions</a>
  */
 public class PlotOptions implements Serializable {
 
@@ -142,197 +140,13 @@ public class PlotOptions implements Serializable {
         return neckWidth;
     }
 
-    public PixelOrPercent getNeckHeight() {
-        return neckHeight;
-    }
-
-    public Boolean getAllowPointSelect() {
-        return this.allowPointSelect;
-    }
-
-    public Boolean getAnimation() {
-        return this.animation;
-    }
-
-    public ColorReference getBorderColor() {
-        return this.borderColor;
-    }
-
-    public Integer getBorderRadius() {
-        return this.borderRadius;
-    }
-
-    public Integer getBorderWidth() {
-        return this.borderWidth;
-    }
-
-    public Center getCenter() {
-        return this.center;
-    }
-
-    public ColorReference getColor() {
-        return this.color;
-    }
-
-    public Boolean getColorByPoint() {
-        return this.colorByPoint;
-    }
-
-    public Boolean getConnectNulls() {
-        return this.connectNulls;
-    }
-
-    public Integer getCropThreshold() {
-        return this.cropThreshold;
-    }
-
-    public Cursor getCursor() {
-        return this.cursor;
-    }
-
-    public GridLineDashStyle getDashStyle() {
-        return this.dashStyle;
-    }
-
-    public DataLabels getDataLabels() {
-        return this.dataLabels;
-    }
-
-    public Boolean getEnableMouseTracking() {
-        return this.enableMouseTracking;
-    }
-
-    public Events getEvents() {
-        return this.events;
-    }
-
-    public ColorReference getFillColor() {
-        return this.fillColor;
-    }
-
-    public Float getFillOpacity() {
-        return this.fillOpacity;
-    }
-
-    public Float getGroupPadding() {
-        return this.groupPadding;
-    }
-
-    public String getId() {
-        return this.id;
-    }
-
-    public PixelOrPercent getInnerSize() {
-        return this.innerSize;
-    }
-
-    public ColorReference getLineColor() {
-        return this.lineColor;
-    }
-
-    public Integer getLineWidth() {
-        return this.lineWidth;
-    }
-
-    public Marker getMarker() {
-        return this.marker;
-    }
-
-    public Integer getMinPointLength() {
-        return this.minPointLength;
-    }
-
-    public PointOptions getPoint() {
-        return this.point;
-    }
-
-    public Integer getPointInterval() {
-        return this.pointInterval;
-    }
-
-    public Float getPointPadding() {
-        return this.pointPadding;
-    }
-
-    public PointPlacement getPointPlacement() {
-        return this.pointPlacement;
-    }
-
-    public Long getPointStart() {
-        return this.pointStart;
-    }
-
-    public Integer getPointWidth() {
-        return this.pointWidth;
-    }
-
-    public Boolean getSelected() {
-        return this.selected;
-    }
-
-    public Boolean getShadow() {
-        return this.shadow;
-    }
-
-    public Boolean getShowCheckbox() {
-        return this.showCheckbox;
-    }
-
-    public Boolean getShowInLegend() {
-        return this.showInLegend;
-    }
-
-    public PixelOrPercent getSize() {
-        return this.size;
-    }
-
-    public Integer getSlicedOffset() {
-        return this.slicedOffset;
-    }
-
-    public Stacking getStacking() {
-        return this.stacking;
-    }
-
-    public PlotOptionsStateChoice getStates() {
-        return this.states;
-    }
-
-    public Boolean getStep() {
-        return this.step;
-    }
-
-    public Boolean getStickyTracking() {
-        return this.stickyTracking;
-    }
-
-    public Integer getThreshold() {
-        return this.threshold;
-    }
-
-    public Tooltip getTooltip() {
-        return this.tooltip;
-    }
-
-    public Boolean getTrackByArea() {
-        return this.trackByArea;
-    }
-
-    public Integer getTurboThreshold() {
-        return this.turboThreshold;
-    }
-
-    public Boolean getVisible() {
-        return this.visible;
-    }
-
-    public Integer getzIndex() {
-        return this.zIndex;
-    }
-
     public PlotOptions setNeckWidth(PixelOrPercent neckWidth) {
         this.neckWidth = neckWidth;
         return this;
+    }
+
+    public PixelOrPercent getNeckHeight() {
+        return neckHeight;
     }
 
     public PlotOptions setNeckHeight(PixelOrPercent neckHeight) {
@@ -340,14 +154,26 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Boolean getAllowPointSelect() {
+        return this.allowPointSelect;
+    }
+
     public PlotOptions setAllowPointSelect(final Boolean allowPointSelect) {
         this.allowPointSelect = allowPointSelect;
         return this;
     }
 
+    public Boolean getAnimation() {
+        return this.animation;
+    }
+
     public PlotOptions setAnimation(final Boolean animation) {
         this.animation = animation;
         return this;
+    }
+
+    public ColorReference getBorderColor() {
+        return this.borderColor;
     }
 
     public PlotOptions setBorderColor(final Color color) {
@@ -360,9 +186,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Integer getBorderRadius() {
+        return this.borderRadius;
+    }
+
     public PlotOptions setBorderRadius(final Integer borderRadius) {
         this.borderRadius = borderRadius;
         return this;
+    }
+
+    public Integer getBorderWidth() {
+        return this.borderWidth;
     }
 
     public PlotOptions setBorderWidth(final Integer borderWidth) {
@@ -370,9 +204,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Center getCenter() {
+        return this.center;
+    }
+
     public PlotOptions setCenter(final Center center) {
         this.center = center;
         return this;
+    }
+
+    public ColorReference getColor() {
+        return this.color;
     }
 
     public PlotOptions setColor(final Color color) {
@@ -385,9 +227,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Boolean getColorByPoint() {
+        return this.colorByPoint;
+    }
+
     public PlotOptions setColorByPoint(final Boolean colorByPoint) {
         this.colorByPoint = colorByPoint;
         return this;
+    }
+
+    public Boolean getConnectNulls() {
+        return this.connectNulls;
     }
 
     public PlotOptions setConnectNulls(final Boolean connectNulls) {
@@ -395,9 +245,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Integer getCropThreshold() {
+        return this.cropThreshold;
+    }
+
     public PlotOptions setCropThreshold(final Integer cropThreshold) {
         this.cropThreshold = cropThreshold;
         return this;
+    }
+
+    public Cursor getCursor() {
+        return this.cursor;
     }
 
     public PlotOptions setCursor(final Cursor cursor) {
@@ -405,9 +263,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public GridLineDashStyle getDashStyle() {
+        return this.dashStyle;
+    }
+
     public PlotOptions setDashStyle(final GridLineDashStyle dashStyle) {
         this.dashStyle = dashStyle;
         return this;
+    }
+
+    public DataLabels getDataLabels() {
+        return this.dataLabels;
     }
 
     public PlotOptions setDataLabels(final DataLabels dataLabels) {
@@ -415,14 +281,26 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Boolean getEnableMouseTracking() {
+        return this.enableMouseTracking;
+    }
+
     public PlotOptions setEnableMouseTracking(final Boolean enableMouseTracking) {
         this.enableMouseTracking = enableMouseTracking;
         return this;
     }
 
+    public Events getEvents() {
+        return this.events;
+    }
+
     public PlotOptions setEvents(final Events events) {
         this.events = events;
         return this;
+    }
+
+    public ColorReference getFillColor() {
+        return this.fillColor;
     }
 
     public PlotOptions setFillColor(final Color color) {
@@ -435,9 +313,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Float getFillOpacity() {
+        return this.fillOpacity;
+    }
+
     public PlotOptions setFillOpacity(final Float fillOpacity) {
         this.fillOpacity = fillOpacity;
         return this;
+    }
+
+    public Float getGroupPadding() {
+        return this.groupPadding;
     }
 
     public PlotOptions setGroupPadding(final Float groupPadding) {
@@ -445,14 +331,26 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
     public PlotOptions setId(final String id) {
         this.id = id;
         return this;
     }
 
+    public PixelOrPercent getInnerSize() {
+        return this.innerSize;
+    }
+
     public PlotOptions setInnerSize(final PixelOrPercent innerSize) {
         this.innerSize = innerSize;
         return this;
+    }
+
+    public ColorReference getLineColor() {
+        return this.lineColor;
     }
 
     public PlotOptions setLineColor(final Color color) {
@@ -465,9 +363,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Integer getLineWidth() {
+        return this.lineWidth;
+    }
+
     public PlotOptions setLineWidth(final Integer lineWidth) {
         this.lineWidth = lineWidth;
         return this;
+    }
+
+    public Marker getMarker() {
+        return this.marker;
     }
 
     public PlotOptions setMarker(final Marker marker) {
@@ -475,9 +381,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Integer getMinPointLength() {
+        return this.minPointLength;
+    }
+
     public PlotOptions setMinPointLength(final Integer minPointLength) {
         this.minPointLength = minPointLength;
         return this;
+    }
+
+    public PointOptions getPoint() {
+        return this.point;
     }
 
     public PlotOptions setPoint(final PointOptions point) {
@@ -485,9 +399,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Integer getPointInterval() {
+        return this.pointInterval;
+    }
+
     public PlotOptions setPointInterval(final Integer pointInterval) {
         this.pointInterval = pointInterval;
         return this;
+    }
+
+    public Float getPointPadding() {
+        return this.pointPadding;
     }
 
     public PlotOptions setPointPadding(final Float pointPadding) {
@@ -495,9 +417,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public PointPlacement getPointPlacement() {
+        return this.pointPlacement;
+    }
+
     public PlotOptions setPointPlacement(final PointPlacement pointPlacement) {
         this.pointPlacement = pointPlacement;
         return this;
+    }
+
+    public Long getPointStart() {
+        return this.pointStart;
     }
 
     public PlotOptions setPointStart(final Long pointStart) {
@@ -505,9 +435,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Integer getPointWidth() {
+        return this.pointWidth;
+    }
+
     public PlotOptions setPointWidth(final Integer pointWidth) {
         this.pointWidth = pointWidth;
         return this;
+    }
+
+    public Boolean getSelected() {
+        return this.selected;
     }
 
     public PlotOptions setSelected(final Boolean selected) {
@@ -515,9 +453,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Boolean getShadow() {
+        return this.shadow;
+    }
+
     public PlotOptions setShadow(final Boolean shadow) {
         this.shadow = shadow;
         return this;
+    }
+
+    public Boolean getShowCheckbox() {
+        return this.showCheckbox;
     }
 
     public PlotOptions setShowCheckbox(final Boolean showCheckbox) {
@@ -525,9 +471,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Boolean getShowInLegend() {
+        return this.showInLegend;
+    }
+
     public PlotOptions setShowInLegend(final Boolean showInLegend) {
         this.showInLegend = showInLegend;
         return this;
+    }
+
+    public PixelOrPercent getSize() {
+        return this.size;
     }
 
     public PlotOptions setSize(final PixelOrPercent size) {
@@ -535,9 +489,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Integer getSlicedOffset() {
+        return this.slicedOffset;
+    }
+
     public PlotOptions setSlicedOffset(final Integer slicedOffset) {
         this.slicedOffset = slicedOffset;
         return this;
+    }
+
+    public Stacking getStacking() {
+        return this.stacking;
     }
 
     public PlotOptions setStacking(final Stacking stacking) {
@@ -545,9 +507,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public PlotOptionsStateChoice getStates() {
+        return this.states;
+    }
+
     public PlotOptions setStates(final PlotOptionsStateChoice states) {
         this.states = states;
         return this;
+    }
+
+    public Boolean getStep() {
+        return this.step;
     }
 
     public PlotOptions setStep(final Boolean step) {
@@ -555,9 +525,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Boolean getStickyTracking() {
+        return this.stickyTracking;
+    }
+
     public PlotOptions setStickyTracking(final Boolean stickyTracking) {
         this.stickyTracking = stickyTracking;
         return this;
+    }
+
+    public Integer getThreshold() {
+        return this.threshold;
     }
 
     public PlotOptions setThreshold(final Integer threshold) {
@@ -565,9 +543,17 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Tooltip getTooltip() {
+        return this.tooltip;
+    }
+
     public PlotOptions setTooltip(final Tooltip tooltip) {
         this.tooltip = tooltip;
         return this;
+    }
+
+    public Boolean getTrackByArea() {
+        return this.trackByArea;
     }
 
     public PlotOptions setTrackByArea(final Boolean trackByArea) {
@@ -575,14 +561,26 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public Integer getTurboThreshold() {
+        return this.turboThreshold;
+    }
+
     public PlotOptions setTurboThreshold(final Integer turboThreshold) {
         this.turboThreshold = turboThreshold;
         return this;
     }
 
+    public Boolean getVisible() {
+        return this.visible;
+    }
+
     public PlotOptions setVisible(final Boolean visible) {
         this.visible = visible;
         return this;
+    }
+
+    public Integer getzIndex() {
+        return this.zIndex;
     }
 
     public PlotOptions setzIndex(final Integer zIndex) {

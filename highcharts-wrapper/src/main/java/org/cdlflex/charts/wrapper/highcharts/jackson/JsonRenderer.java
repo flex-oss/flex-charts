@@ -1,26 +1,24 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
  *        http://www.apache.org/licenses/LICENSE-2.0
  *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
  */
 package org.cdlflex.charts.wrapper.highcharts.jackson;
 
 import java.util.Locale;
 
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.databind.JsonSerializer;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+import org.cdlflex.charts.wrapper.highcharts.json.LowercaseEnum;
 import org.cdlflex.charts.wrapper.highcharts.options.Center;
+import org.cdlflex.charts.wrapper.highcharts.options.Crosshair;
+import org.cdlflex.charts.wrapper.highcharts.options.CssStyle;
 import org.cdlflex.charts.wrapper.highcharts.options.DateTimeLabelFormat;
 import org.cdlflex.charts.wrapper.highcharts.options.Function;
 import org.cdlflex.charts.wrapper.highcharts.options.MinorTickInterval;
@@ -33,49 +31,55 @@ import org.cdlflex.charts.wrapper.highcharts.options.color.RgbaColor;
 import org.cdlflex.charts.wrapper.highcharts.options.color.SimpleColor;
 import org.cdlflex.charts.wrapper.highcharts.options.series.Bubble;
 import org.cdlflex.charts.wrapper.highcharts.options.series.Coordinate;
-import org.cdlflex.charts.wrapper.highcharts.json.LowercaseEnum;
-import org.cdlflex.charts.wrapper.highcharts.options.Crosshair;
-import org.cdlflex.charts.wrapper.highcharts.options.CssStyle;
 import org.cdlflex.charts.wrapper.highcharts.options.series.RangeCoordinate;
 import org.cdlflex.charts.wrapper.highcharts.options.series.ThreeDCoordinate;
 
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.databind.JsonSerializer;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
 /**
- * A renderer for rendering Highcharts options into JSON objects based on the
- * Jackson Mapping library.
+ * A renderer for rendering Highcharts options into JSON objects based on the Jackson Mapping library.
  *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  */
 public class JsonRenderer {
 
-    private final ObjectMapper jacksonMapper;
-
-    private final WickedChartsJacksonModule jacksonModule;
-
     /**
-     * The default mapper can be used to bypass the serializers registered in the
-     * {@link WickedChartsJacksonModule}.
+     * The default mapper can be used to bypass the serializers registered in the {@link WickedChartsJacksonModule}.
      */
     public final static ObjectMapper DEFAULT_MAPPER = createDefaultObjectMapper();
+    private final ObjectMapper jacksonMapper;
+    private final WickedChartsJacksonModule jacksonModule;
 
     public JsonRenderer() {
         this.jacksonModule = new WickedChartsJacksonModule();
         this.jacksonMapper = createJacksonMapper();
     }
 
+    private static ObjectMapper createDefaultObjectMapper() {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(SerializationFeature.INDENT_OUTPUT);
+        mapper.disable(SerializationFeature.WRITE_NULL_MAP_VALUES);
+        mapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
+        mapper.setSerializationInclusion(Include.NON_NULL);
+        return mapper;
+    }
+
     /**
-     * This method gives the opportunity to add a custom serializer to serializer
-     * one of the highchart option classes. It may be neccessary to serialize
-     * certain option classes differently for different web frameworks.
+     * This method gives the opportunity to add a custom serializer to serializer one of the highchart option classes.
+     * It may be neccessary to serialize certain option classes differently for different web frameworks.
      *
-     * @param clazz      the option class
-     * @param serializer the serializer responsible for serializing objects of the option
-     *                   class.
+     * @param clazz the option class
+     * @param serializer the serializer responsible for serializing objects of the option class.
+     * @param <T> the model type
      */
     public <T> void addSerializer(final Class<T> clazz, final JsonSerializer<T> serializer) {
         this.jacksonModule.addSerializer(clazz, serializer);
     }
 
-    @SuppressWarnings({"rawtypes", "unchecked"})
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     private ObjectMapper createJacksonMapper() {
 
         this.jacksonModule.addSerializer(Center.class, new CenterSerializer());
@@ -103,22 +107,13 @@ public class JsonRenderer {
         return mapper;
     }
 
-    private static ObjectMapper createDefaultObjectMapper() {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.enable(SerializationFeature.INDENT_OUTPUT);
-        mapper.disable(SerializationFeature.WRITE_NULL_MAP_VALUES);
-        mapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
-        mapper.setSerializationInclusion(Include.NON_NULL);
-        return mapper;
-    }
-
     public String toJson(final Object object) {
         try {
             String result = this.jacksonMapper.writeValueAsString(object);
             return convertTurkishChars(result);
         } catch (Exception e) {
             throw new RuntimeException("Error trying to serialize object of type " + object.getClass().getName()
-                    + " into JSON!", e);
+                + " into JSON!", e);
         }
     }
 
@@ -126,17 +121,20 @@ public class JsonRenderer {
         try {
             return this.jacksonMapper.readValue(json, targetClazz);
         } catch (Exception e) {
-            throw new RuntimeException("Error trying to deserialize object of type " + targetClazz.getName() + " into JSON!",
-                    e);
+            throw new RuntimeException(
+                    "Error trying to deserialize object of type " + targetClazz.getName() + " into JSON!", e);
         }
     }
 
     /**
      * Converts special turkish characters to their latin-1 counterpart so that the JSON output will still be valid.
+     * 
+     * @param text the text to be converted
+     * @return the converted text
      */
     public String convertTurkishChars(String text) {
-        String[] olds = {"Ğ", "ğ", "Ü", "ü", "Ş", "ş", "İ", "ı", "Ö", "ö", "Ç", "ç"};
-        String[] news = {"G", "g", "U", "u", "S", "s", "I", "i", "O", "o", "C", "c"};
+        String[] olds = { "Ğ", "ğ", "Ü", "ü", "Ş", "ş", "İ", "ı", "Ö", "ö", "Ç", "ç" };
+        String[] news = { "G", "g", "U", "u", "S", "s", "I", "i", "O", "o", "C", "c" };
 
         for (int i = 0; i < olds.length; i++) {
             text = text.replace(olds[i], news[i]);

@@ -1,20 +1,19 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
  *        http://www.apache.org/licenses/LICENSE-2.0
  *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
  */
 package org.cdlflex.charts.wrapper.highcharts.options;
 
-import java.awt.Color;
+import java.awt.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,8 +26,7 @@ import org.cdlflex.charts.wrapper.highcharts.options.color.SimpleColor;
  * Defines an Axis for a Highcharts chart.
  *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
- * @see <a
- * href="http://api.highcharts.com/highcharts#Axis">http://api.highcharts.com/highcharts#Axis</a>
+ * @see <a href="http://api.highcharts.com/highcharts#Axis">http://api.highcharts.com/highcharts#Axis</a>
  */
 public class Axis implements Serializable {
 
@@ -148,193 +146,13 @@ public class Axis implements Serializable {
         return this.allowDecimals;
     }
 
-    public ColorReference getAlternateGridColor() {
-        return this.alternateGridColor;
-    }
-
-    public List<String> getCategories() {
-        return this.categories;
-    }
-
-    public DateTimeLabelFormat getDateTimeLabelFormats() {
-        return this.dateTimeLabelFormats;
-    }
-
-    public Boolean getEndOnTick() {
-        return this.endOnTick;
-    }
-
-    public Events getEvents() {
-        return this.events;
-    }
-
-    public ColorReference getGridLineColor() {
-        return this.gridLineColor;
-    }
-
-    public GridLineDashStyle getGridLineDashStyle() {
-        return this.gridLineDashStyle;
-    }
-
-    public Integer getGridLineWidth() {
-        return this.gridLineWidth;
-    }
-
-    public String getId() {
-        return this.id;
-    }
-
-    public Labels getLabels() {
-        return this.labels;
-    }
-
-    public ColorReference getLineColor() {
-        return this.lineColor;
-    }
-
-    public Integer getLineWidth() {
-        return this.lineWidth;
-    }
-
-    public Integer getLinkedTo() {
-        return this.linkedTo;
-    }
-
-    public Number getMax() {
-        return this.max;
-    }
-
-    public Float getMaxPadding() {
-        return this.maxPadding;
-    }
-
-    public Integer getMaxZoom() {
-        return this.maxZoom;
-    }
-
-    public Number getMin() {
-        return this.min;
-    }
-
-    public ColorReference getMinorGridLineColor() {
-        return this.minorGridLineColor;
-    }
-
-    public GridLineDashStyle getMinorGridLineDashStyle() {
-        return this.minorGridLineDashStyle;
-    }
-
-    public Integer getMinorGridLineWidth() {
-        return this.minorGridLineWidth;
-    }
-
-    public ColorReference getMinorTickColor() {
-        return this.minorTickColor;
-    }
-
-    public MinorTickInterval getMinorTickInterval() {
-        return this.minorTickInterval;
-    }
-
-    public Integer getMinorTickLength() {
-        return this.minorTickLength;
-    }
-
-    public Integer getMinorTickWidth() {
-        return this.minorTickWidth;
-    }
-
-    public Float getMinPadding() {
-        return this.minPadding;
-    }
-
-    public Integer getMinRange() {
-        return this.minRange;
-    }
-
-    public Integer getOffset() {
-        return this.offset;
-    }
-
-    public Boolean getOpposite() {
-        return this.opposite;
-    }
-
-    public List<PlotBand> getPlotBands() {
-        return this.plotBands;
-    }
-
-    public List<PlotLine> getPlotLines() {
-        return this.plotLines;
-    }
-
-    public Boolean getReversed() {
-        return this.reversed;
-    }
-
-    public Boolean getShowEmpty() {
-        return this.showEmpty;
-    }
-
-    public Boolean getShowFirstLabel() {
-        return this.showFirstLabel;
-    }
-
-    public Boolean getShowLastLabel() {
-        return this.showLastLabel;
-    }
-
-    public StackLabels getStackLabels() {
-        return this.stackLabels;
-    }
-
-    public Integer getStartOfWeek() {
-        return this.startOfWeek;
-    }
-
-    public Boolean getStartOnTick() {
-        return this.startOnTick;
-    }
-
-    public ColorReference getTickColor() {
-        return this.tickColor;
-    }
-
-    public Float getTickInterval() {
-        return this.tickInterval;
-    }
-
-    public Integer getTickLength() {
-        return this.tickLength;
-    }
-
-    public TickmarkPlacement getTickmarkPlacement() {
-        return this.tickmarkPlacement;
-    }
-
-    public Integer getTickPixelInterval() {
-        return this.tickPixelInterval;
-    }
-
-    public TickPosition getTickPosition() {
-        return this.tickPosition;
-    }
-
-    public Integer getTickWidth() {
-        return this.tickWidth;
-    }
-
-    public Title getTitle() {
-        return this.title;
-    }
-
-    public AxisType getType() {
-        return this.type;
-    }
-
     public Axis setAllowDecimals(final Boolean allowDecimals) {
         this.allowDecimals = allowDecimals;
         return this;
+    }
+
+    public ColorReference getAlternateGridColor() {
+        return this.alternateGridColor;
     }
 
     public Axis setAlternateGridColor(final Color color) {
@@ -347,6 +165,10 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public List<String> getCategories() {
+        return this.categories;
+    }
+
     public Axis setCategories(final List<String> categories) {
         this.categories = categories;
         return this;
@@ -357,9 +179,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public DateTimeLabelFormat getDateTimeLabelFormats() {
+        return this.dateTimeLabelFormats;
+    }
+
     public Axis setDateTimeLabelFormats(final DateTimeLabelFormat dateTimeLabelFormats) {
         this.dateTimeLabelFormats = dateTimeLabelFormats;
         return this;
+    }
+
+    public Boolean getEndOnTick() {
+        return this.endOnTick;
     }
 
     public Axis setEndOnTick(final Boolean endOnTick) {
@@ -367,9 +197,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public Events getEvents() {
+        return this.events;
+    }
+
     public Axis setEvents(final Events events) {
         this.events = events;
         return this;
+    }
+
+    public ColorReference getGridLineColor() {
+        return this.gridLineColor;
     }
 
     public Axis setGridLineColor(final Color color) {
@@ -382,9 +220,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public GridLineDashStyle getGridLineDashStyle() {
+        return this.gridLineDashStyle;
+    }
+
     public Axis setGridLineDashStyle(final GridLineDashStyle gridLineDashStyle) {
         this.gridLineDashStyle = gridLineDashStyle;
         return this;
+    }
+
+    public Integer getGridLineWidth() {
+        return this.gridLineWidth;
     }
 
     public Axis setGridLineWidth(final Integer gridLineWidth) {
@@ -392,14 +238,26 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
     public Axis setId(final String id) {
         this.id = id;
         return this;
     }
 
+    public Labels getLabels() {
+        return this.labels;
+    }
+
     public Axis setLabels(final Labels labels) {
         this.labels = labels;
         return this;
+    }
+
+    public ColorReference getLineColor() {
+        return this.lineColor;
     }
 
     public Axis setLineColor(final Color color) {
@@ -412,9 +270,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public Integer getLineWidth() {
+        return this.lineWidth;
+    }
+
     public Axis setLineWidth(final Integer lineWidth) {
         this.lineWidth = lineWidth;
         return this;
+    }
+
+    public Integer getLinkedTo() {
+        return this.linkedTo;
     }
 
     public Axis setLinkedTo(final Integer linkedTo) {
@@ -422,9 +288,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public Number getMax() {
+        return this.max;
+    }
+
     public Axis setMax(final Number max) {
         this.max = max;
         return this;
+    }
+
+    public Float getMaxPadding() {
+        return this.maxPadding;
     }
 
     public Axis setMaxPadding(final Float maxPadding) {
@@ -432,14 +306,26 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public Integer getMaxZoom() {
+        return this.maxZoom;
+    }
+
     public Axis setMaxZoom(final Integer maxZoom) {
         this.maxZoom = maxZoom;
         return this;
     }
 
+    public Number getMin() {
+        return this.min;
+    }
+
     public Axis setMin(final Number min) {
         this.min = min;
         return this;
+    }
+
+    public ColorReference getMinorGridLineColor() {
+        return this.minorGridLineColor;
     }
 
     public Axis setMinorGridLineColor(final Color color) {
@@ -452,14 +338,26 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public GridLineDashStyle getMinorGridLineDashStyle() {
+        return this.minorGridLineDashStyle;
+    }
+
     public Axis setMinorGridLineDashStyle(final GridLineDashStyle minorGridLineDashStyle) {
         this.minorGridLineDashStyle = minorGridLineDashStyle;
         return this;
     }
 
+    public Integer getMinorGridLineWidth() {
+        return this.minorGridLineWidth;
+    }
+
     public Axis setMinorGridLineWidth(final Integer minorGridLineWidth) {
         this.minorGridLineWidth = minorGridLineWidth;
         return this;
+    }
+
+    public ColorReference getMinorTickColor() {
+        return this.minorTickColor;
     }
 
     public Axis setMinorTickColor(final Color color) {
@@ -472,9 +370,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public MinorTickInterval getMinorTickInterval() {
+        return this.minorTickInterval;
+    }
+
     public Axis setMinorTickInterval(final MinorTickInterval minorTickInterval) {
         this.minorTickInterval = minorTickInterval;
         return this;
+    }
+
+    public Integer getMinorTickLength() {
+        return this.minorTickLength;
     }
 
     public Axis setMinorTickLength(final Integer minorTickLength) {
@@ -482,9 +388,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public Integer getMinorTickWidth() {
+        return this.minorTickWidth;
+    }
+
     public Axis setMinorTickWidth(final Integer minorTickWidth) {
         this.minorTickWidth = minorTickWidth;
         return this;
+    }
+
+    public Float getMinPadding() {
+        return this.minPadding;
     }
 
     public Axis setMinPadding(final Float minPadding) {
@@ -492,9 +406,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public Integer getMinRange() {
+        return this.minRange;
+    }
+
     public Axis setMinRange(final Integer minRange) {
         this.minRange = minRange;
         return this;
+    }
+
+    public Integer getOffset() {
+        return this.offset;
     }
 
     public Axis setOffset(final Integer offset) {
@@ -502,9 +424,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public Boolean getOpposite() {
+        return this.opposite;
+    }
+
     public Axis setOpposite(final Boolean opposite) {
         this.opposite = opposite;
         return this;
+    }
+
+    public List<PlotBand> getPlotBands() {
+        return this.plotBands;
     }
 
     public Axis setPlotBands(final List<PlotBand> plotBands) {
@@ -512,9 +442,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public List<PlotLine> getPlotLines() {
+        return this.plotLines;
+    }
+
     public Axis setPlotLines(final List<PlotLine> plotLines) {
         this.plotLines = plotLines;
         return this;
+    }
+
+    public Boolean getReversed() {
+        return this.reversed;
     }
 
     public Axis setReversed(final Boolean reversed) {
@@ -522,9 +460,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public Boolean getShowEmpty() {
+        return this.showEmpty;
+    }
+
     public Axis setShowEmpty(final Boolean showEmpty) {
         this.showEmpty = showEmpty;
         return this;
+    }
+
+    public Boolean getShowFirstLabel() {
+        return this.showFirstLabel;
     }
 
     public Axis setShowFirstLabel(final Boolean showFirstLabel) {
@@ -532,9 +478,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public Boolean getShowLastLabel() {
+        return this.showLastLabel;
+    }
+
     public Axis setShowLastLabel(final Boolean showLastLabel) {
         this.showLastLabel = showLastLabel;
         return this;
+    }
+
+    public StackLabels getStackLabels() {
+        return this.stackLabels;
     }
 
     public Axis setStackLabels(final StackLabels stackLabels) {
@@ -542,14 +496,26 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public Integer getStartOfWeek() {
+        return this.startOfWeek;
+    }
+
     public Axis setStartOfWeek(final Integer startOfWeek) {
         this.startOfWeek = startOfWeek;
         return this;
     }
 
+    public Boolean getStartOnTick() {
+        return this.startOnTick;
+    }
+
     public Axis setStartOnTick(final Boolean startOnTick) {
         this.startOnTick = startOnTick;
         return this;
+    }
+
+    public ColorReference getTickColor() {
+        return this.tickColor;
     }
 
     public Axis setTickColor(final Color color) {
@@ -562,9 +528,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public Float getTickInterval() {
+        return this.tickInterval;
+    }
+
     public Axis setTickInterval(final Float tickInterval) {
         this.tickInterval = tickInterval;
         return this;
+    }
+
+    public Integer getTickLength() {
+        return this.tickLength;
     }
 
     public Axis setTickLength(final Integer tickLength) {
@@ -572,9 +546,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public TickmarkPlacement getTickmarkPlacement() {
+        return this.tickmarkPlacement;
+    }
+
     public Axis setTickmarkPlacement(final TickmarkPlacement tickmarkPlacement) {
         this.tickmarkPlacement = tickmarkPlacement;
         return this;
+    }
+
+    public Integer getTickPixelInterval() {
+        return this.tickPixelInterval;
     }
 
     public Axis setTickPixelInterval(final Integer tickPixelInterval) {
@@ -582,9 +564,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public TickPosition getTickPosition() {
+        return this.tickPosition;
+    }
+
     public Axis setTickPosition(final TickPosition tickPosition) {
         this.tickPosition = tickPosition;
         return this;
+    }
+
+    public Integer getTickWidth() {
+        return this.tickWidth;
     }
 
     public Axis setTickWidth(final Integer tickWidth) {
@@ -592,9 +582,17 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public Title getTitle() {
+        return this.title;
+    }
+
     public Axis setTitle(final Title title) {
         this.title = title;
         return this;
+    }
+
+    public AxisType getType() {
+        return this.type;
     }
 
     public Axis setType(final AxisType type) {
@@ -602,13 +600,13 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public TickPosition getMinorTickPosition() {
+        return this.minorTickPosition;
+    }
+
     public Axis setMinorTickPosition(final TickPosition minorTickPosition) {
         this.minorTickPosition = minorTickPosition;
         return this;
-    }
-
-    public TickPosition getMinorTickPosition() {
-        return this.minorTickPosition;
     }
 
     public Axis addPlotBand(final PlotBand plotBand) {
@@ -627,21 +625,21 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public GridlineInterpolation getGridLineInterpolation() {
+        return this.gridLineInterpolation;
+    }
+
     public Axis setGridLineInterpolation(final GridlineInterpolation gridLineInterpolation) {
         this.gridLineInterpolation = gridLineInterpolation;
         return this;
     }
 
-    public GridlineInterpolation getGridLineInterpolation() {
-        return this.gridLineInterpolation;
+    public Integer getWickedChartsId() {
+        return this.wickedChartsId;
     }
 
     public void setWickedChartsId(final Integer wickedChartsId) {
         this.wickedChartsId = wickedChartsId;
-    }
-
-    public Integer getWickedChartsId() {
-        return this.wickedChartsId;
     }
 
     public List<Integer> getTickPositions() {

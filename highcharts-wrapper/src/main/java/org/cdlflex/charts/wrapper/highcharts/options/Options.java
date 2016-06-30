@@ -1,16 +1,15 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
  *        http://www.apache.org/licenses/LICENSE-2.0
  *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
  */
 package org.cdlflex.charts.wrapper.highcharts.options;
 
@@ -21,32 +20,29 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.cdlflex.charts.wrapper.highcharts.options.color.ColorReference;
 import org.cdlflex.charts.wrapper.highcharts.options.heatmap.ColorAxis;
 import org.cdlflex.charts.wrapper.highcharts.options.series.Series;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
- * This is the main class for configuring a chart. The structure of this class
- * is designed to be very close to the Highcharts options object. For
- * explanations of all options, please consult the Highcharts API reference.
- * <p/>
- * The options object will be serialized to a JSON object which is passed into
- * the Highcharts Javascript library. Options that are not set (i.e. that are
- * null), are not serialized into JSON, so that the default values of the
+ * This is the main class for configuring a chart. The structure of this class is designed to be very close to the
+ * Highcharts options object. For explanations of all options, please consult the Highcharts API reference.
+ *
+ * The options object will be serialized to a JSON object which is passed into the Highcharts Javascript library.
+ * Options that are not set (i.e. that are null), are not serialized into JSON, so that the default values of the
  * Highcharts library will be used.
  *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
- * @see <a
- * href="http://api.highcharts.com/highcharts">http://api.highcharts.com/highcharts</a>
+ * @see <a href="http://api.highcharts.com/highcharts">http://api.highcharts.com/highcharts</a>
  */
 public class Options implements Serializable {
 
-    @JsonIgnore
-    private Map<String, List<IProcessableOption>> processingRegistry = new HashMap<String, List<IProcessableOption>>();
-
     private static final long serialVersionUID = 1L;
-
+    @JsonIgnore
+    private Map<String, List<IProcessableOption>> processingRegistry =
+        new HashMap<String, List<IProcessableOption>>();
     private ColorAxis colorAxis;
 
     private ChartOptions chart;
@@ -89,8 +85,7 @@ public class Options implements Serializable {
     }
 
     /**
-     * Constructs an {@link Options} object initialized with the configuration of
-     * another {@link Options} object.
+     * Constructs an {@link Options} object initialized with the configuration of another {@link Options} object.
      *
      * @param template the {@link Options} object to copy the configuration from.
      */
@@ -115,8 +110,7 @@ public class Options implements Serializable {
     }
 
     /**
-     * Adds an XAxis to the chart. You can use {@link #setxAxis(Axis)} if you want
-     * to define a single axis only.
+     * Adds an XAxis to the chart. You can use {@link #setxAxis(Axis)} if you want to define a single axis only.
      *
      * @param xAxis the XAxis to add.
      * @return the {@link Options} object for chaining.
@@ -130,8 +124,7 @@ public class Options implements Serializable {
     }
 
     /**
-     * Adds an YAxis to the chart. You can use {@link #setyAxis(Axis)} if you want
-     * to define a single axis only.
+     * Adds an YAxis to the chart. You can use {@link #setyAxis(Axis)} if you want to define a single axis only.
      *
      * @param yAxis the YAxis to add.
      * @return the {@link Options} object for chaining.
@@ -173,8 +166,18 @@ public class Options implements Serializable {
         return this.chart;
     }
 
+    public Options setChart(final ChartOptions chart) {
+        this.chart = chart;
+        return this;
+    }
+
     public ColorAxis getColorAxis() {
         return colorAxis;
+    }
+
+    public Options setColorAxis(final ColorAxis colorAxis) {
+        this.colorAxis = colorAxis;
+        return this;
     }
 
     @JsonIgnore
@@ -182,36 +185,87 @@ public class Options implements Serializable {
         return this.chart;
     }
 
+    public Options setChartOptions(final ChartOptions chart) {
+        this.chart = chart;
+        return this;
+    }
+
     public List<? extends ColorReference> getColors() {
         return this.colors;
+    }
+
+    public Options setColors(final ColorReference... colors) {
+        this.colors = Arrays.asList(colors);
+        return this;
+    }
+
+    public Options setColors(final List<ColorReference> colors) {
+        this.colors = colors;
+        return this;
     }
 
     public CreditOptions getCreditOptions() {
         return this.credits;
     }
 
+    public Options setCreditOptions(final CreditOptions credits) {
+        this.credits = credits;
+        return this;
+    }
+
     public CreditOptions getCredits() {
         return this.credits;
+    }
+
+    public Options setCredits(final CreditOptions credits) {
+        this.credits = credits;
+        return this;
     }
 
     public ExportingOptions getExporting() {
         return this.exporting;
     }
 
+    public Options setExporting(final ExportingOptions exporting) {
+        this.exporting = exporting;
+        return this;
+    }
+
     public Global getGlobal() {
         return this.global;
+    }
+
+    public Options setGlobal(final Global global) {
+        this.global = global;
+        markForProcessing(global);
+        return this;
     }
 
     public Labels getLabels() {
         return this.labels;
     }
 
+    public Options setLabels(final Labels labels) {
+        this.labels = labels;
+        return this;
+    }
+
     public Legend getLegend() {
         return this.legend;
     }
 
+    public Options setLegend(final Legend legend) {
+        this.legend = legend;
+        return this;
+    }
+
     public Loading getLoading() {
         return this.loading;
+    }
+
+    public Options setLoading(final Loading loading) {
+        this.loading = loading;
+        return this;
     }
 
     /**
@@ -219,8 +273,7 @@ public class Options implements Serializable {
      * {@link #markForProcessing(IProcessableOption)} with the given key.
      *
      * @param processingKey the key with which the options in questions were marked.
-     * @return list of marked {@link IProcessableOption}s, or an empty list, if
-     * none were marked
+     * @return list of marked {@link IProcessableOption}s, or an empty list, if none were marked
      */
     public List<IProcessableOption> getMarkedForProcessing(final String processingKey) {
         List<IProcessableOption> result = this.processingRegistry.get(processingKey);
@@ -235,12 +288,27 @@ public class Options implements Serializable {
         return this.navigation;
     }
 
+    public Options setNavigation(final Navigation navigation) {
+        this.navigation = navigation;
+        return this;
+    }
+
     public Pane getPane() {
         return this.pane;
     }
 
+    public Options setPane(final Pane pane) {
+        this.pane = pane;
+        return this;
+    }
+
     public PlotOptionsChoice getPlotOptions() {
         return this.plotOptions;
+    }
+
+    public Options setPlotOptions(final PlotOptionsChoice plotOptions) {
+        this.plotOptions = plotOptions;
+        return this;
     }
 
     @SuppressWarnings("rawtypes")
@@ -248,9 +316,13 @@ public class Options implements Serializable {
         return this.series;
     }
 
+    public Options setSeries(final List<Series<?>> series) {
+        this.series = series;
+        return this;
+    }
+
     /**
-     * Returns the single xAxis. If there is more than one xAxis defined, the
-     * first is returned.
+     * Returns the single xAxis. If there is more than one xAxis defined, the first is returned.
      *
      * @return the single xAxis.
      */
@@ -264,8 +336,7 @@ public class Options implements Serializable {
     }
 
     /**
-     * Returns the single yAxis. If there is more than one yAxis defined, the
-     * first is returned.
+     * Returns the single yAxis. If there is more than one yAxis defined, the first is returned.
      *
      * @return the single yAxis.
      */
@@ -282,110 +353,13 @@ public class Options implements Serializable {
         return this.subtitle;
     }
 
-    public Title getTitle() {
-        return this.title;
-    }
-
-    public Tooltip getTooltip() {
-        return this.tooltip;
-    }
-
-    public List<Axis> getxAxis() {
-        return this.xAxis;
-    }
-
-    public List<Axis> getyAxis() {
-        return this.yAxis;
-    }
-
-    public void markForProcessing(final IProcessableOption option) {
-        List<IProcessableOption> list = this.processingRegistry.get(option.getProcessingKey());
-        if (list == null) {
-            list = new ArrayList<IProcessableOption>();
-            this.processingRegistry.put(option.getProcessingKey(), list);
-        }
-        list.add(option);
-    }
-
-    public Options setChart(final ChartOptions chart) {
-        this.chart = chart;
-        return this;
-    }
-
-    public Options setChartOptions(final ChartOptions chart) {
-        this.chart = chart;
-        return this;
-    }
-
-    public Options setColors(final ColorReference... colors) {
-        this.colors = Arrays.asList(colors);
-        return this;
-    }
-
-    public Options setColors(final List<ColorReference> colors) {
-        this.colors = colors;
-        return this;
-    }
-
-    public Options setCreditOptions(final CreditOptions credits) {
-        this.credits = credits;
-        return this;
-    }
-
-    public Options setCredits(final CreditOptions credits) {
-        this.credits = credits;
-        return this;
-    }
-
-    public Options setExporting(final ExportingOptions exporting) {
-        this.exporting = exporting;
-        return this;
-    }
-
-    public Options setGlobal(final Global global) {
-        this.global = global;
-        markForProcessing(global);
-        return this;
-    }
-
-    public Options setLabels(final Labels labels) {
-        this.labels = labels;
-        return this;
-    }
-
-    public Options setLegend(final Legend legend) {
-        this.legend = legend;
-        return this;
-    }
-
-    public Options setLoading(final Loading loading) {
-        this.loading = loading;
-        return this;
-    }
-
-    public Options setNavigation(final Navigation navigation) {
-        this.navigation = navigation;
-        return this;
-    }
-
-    public Options setPane(final Pane pane) {
-        this.pane = pane;
-        return this;
-    }
-
-    public Options setPlotOptions(final PlotOptionsChoice plotOptions) {
-        this.plotOptions = plotOptions;
-        return this;
-    }
-
-    public Options setSeries(final List<Series<?>> series) {
-        this.series = series;
-        return this;
-    }
-
     public Options setSubtitle(final Title subtitle) {
         this.subtitle = subtitle;
         return this;
+    }
+
+    public Title getTitle() {
+        return this.title;
     }
 
     public Options setTitle(final Title title) {
@@ -393,15 +367,22 @@ public class Options implements Serializable {
         return this;
     }
 
+    public Tooltip getTooltip() {
+        return this.tooltip;
+    }
+
     public Options setTooltip(final Tooltip tooltip) {
         this.tooltip = tooltip;
         return this;
     }
 
+    public List<Axis> getxAxis() {
+        return this.xAxis;
+    }
+
     /**
-     * Sets the single xAxis. If you need to define more than one xAxis use
-     * {@link #addxAxis(Axis)}. If there are multiple Axes defined when calling
-     * this method, only the specified axis will be defined afterwards.
+     * Sets the single xAxis. If you need to define more than one xAxis use {@link #addxAxis(Axis)}. If there are
+     * multiple Axes defined when calling this method, only the specified axis will be defined afterwards.
      *
      * @param xAxis the single xAxis of the chart
      * @return the {@link Options} object for chaining
@@ -417,10 +398,13 @@ public class Options implements Serializable {
         return this;
     }
 
+    public List<Axis> getyAxis() {
+        return this.yAxis;
+    }
+
     /**
-     * Sets the single yAxis. If you need to define more than one yAxis use
-     * {@link #addyAxis(Axis)}. If there are multiple Axes defined when calling
-     * this method, only the specified axis will be defined afterwards.
+     * Sets the single yAxis. If you need to define more than one yAxis use {@link #addyAxis(Axis)}. If there are
+     * multiple Axes defined when calling this method, only the specified axis will be defined afterwards.
      *
      * @param yAxis the single yAxis of the chart
      * @return the {@link Options} object for chaining
@@ -436,9 +420,13 @@ public class Options implements Serializable {
         return this;
     }
 
-    public Options setColorAxis(final ColorAxis colorAxis) {
-        this.colorAxis = colorAxis;
-        return this;
+    public void markForProcessing(final IProcessableOption option) {
+        List<IProcessableOption> list = this.processingRegistry.get(option.getProcessingKey());
+        if (list == null) {
+            list = new ArrayList<IProcessableOption>();
+            this.processingRegistry.put(option.getProcessingKey(), list);
+        }
+        list.add(option);
     }
 
 }

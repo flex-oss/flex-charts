@@ -1,16 +1,15 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
  *        http://www.apache.org/licenses/LICENSE-2.0
  *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
  */
 package org.cdlflex.charts.wrapper.highcharts.options;
 
@@ -22,19 +21,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * Defines the "globals" option.
  *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
- * @see <a
- * href="http://api.highcharts.com/highcharts#global">http://api.highcharts.com/highcharts#global</a>
+ * @see <a href="http://api.highcharts.com/highcharts#global">http://api.highcharts.com/highcharts#global</a>
  */
 public class Global implements IProcessableOption, Serializable {
 
-    private static final long serialVersionUID = 1L;
-
     /**
-     * The key under which {@link Global}s are registered in the parent options.
-     * See {@link Options#markForProcessing(IProcessableOption)} .
+     * The key under which {@link Global}s are registered in the parent options. See
+     * {@link Options#markForProcessing(IProcessableOption)} .
      */
     public static final String PROCESSING_KEY = "GLOBAL";
-
+    private static final long serialVersionUID = 1L;
     private String canvasToolsURL;
 
     private Boolean useUTC;
@@ -47,13 +43,13 @@ public class Global implements IProcessableOption, Serializable {
         return this.canvasToolsURL;
     }
 
-    public Boolean getUseUTC() {
-        return this.useUTC;
-    }
-
     public Global setCanvasToolsURL(final String canvasToolsURL) {
         this.canvasToolsURL = canvasToolsURL;
         return this;
+    }
+
+    public Boolean getUseUTC() {
+        return this.useUTC;
     }
 
     public Global setUseUTC(final Boolean useUTC) {
@@ -61,13 +57,13 @@ public class Global implements IProcessableOption, Serializable {
         return this;
     }
 
+    public String getVMLRadialGradientURL() {
+        return VMLRadialGradientURL;
+    }
+
     public Global setVMLRadialGradientURL(String vMLRadialGradientURL) {
         VMLRadialGradientURL = vMLRadialGradientURL;
         return this;
-    }
-
-    public String getVMLRadialGradientURL() {
-        return VMLRadialGradientURL;
     }
 
     @Override
